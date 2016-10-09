@@ -9,3 +9,4 @@ Hey guys, my name is Amnah! I like Harry Potter. My favourite book is the Half B
 
 Hi It's Riya, I watch Pokemon & Pikachu is my fav 
 
+Jonathan Sun - My favorite fictional character is Ron Weasley.
