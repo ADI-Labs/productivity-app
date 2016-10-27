@@ -11,25 +11,26 @@ Go to http://localhost:8080 in your browser.
 """
 
 import click
+
 from app import app
 
+@click.command()
+@click.option('--debug', is_flag=True)
+@click.option('--threaded', is_flag=True)
+@click.argument('HOST', default='0.0.0.0')
+@click.argument('PORT', default=8080, type=int)
+def serve(debug, threaded, host, port):
+    """
+    Run the server using:
+
+        python server.py
+
+    Show the help text using:
+
+        python server.py --help
+
+    """
+    app.run(host=host, port=port, debug=debug, threaded=threaded)
+
 if __name__ == '__main__':
-    @click.command()
-    @click.option('--debug', is_flag=True)
-    @click.option('--threaded', is_flag=True)
-    @click.argument('HOST', default='0.0.0.0')
-    @click.argument('PORT', default=8080, type=int)
-    def serve(debug, threaded, host, port):
-        """
-        Run the server using:
-
-            python server.py
-
-        Show the help text using:
-
-            python server.py --help
-
-        """
-        app.run(host=host, port=port, debug=debug, threaded=threaded)
-
     serve()

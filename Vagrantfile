@@ -70,7 +70,7 @@ Vagrant.configure("2") do |config|
     apt-get upgrade
     apt-get install --yes python3-dev
     apt-get install --yes python3-pip
-    pip3 install --requirement /vagrant/requirements
+    pip3 install --requirement /vagrant/requirements.txt
     echo "Provisioning complete."
   SHELL
 end

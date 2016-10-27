@@ -1,0 +1,8 @@
+import pytest
+
+
+@pytest.mark.parametrize("url", ["/"])
+def test_html_style(app, url):
+    response = app.get(url)
+    assert response.status_code == 200
+    assert response.mimetype == "text/html"
