@@ -12,7 +12,6 @@ Go to http://localhost:8080 in your browser.
 
 import click
 
-from app import app
 
 @click.command()
 @click.option('--debug', is_flag=True)
@@ -30,6 +29,7 @@ def serve(debug, threaded, host, port):
         python server.py --help
 
     """
+    from app import app
     app.run(host=host, port=port, debug=debug, threaded=threaded)
 
 if __name__ == '__main__':
