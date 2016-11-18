@@ -1,6 +1,31 @@
 {% extends "base.html" %}
 {% block content %}
+
 <div class="docs-section center">
   Simple app structure.
+    <form action="/page2" method="post">
+    <div>
+    <label for="goal">What do you want to accomplish today?</label>
+    <input type="text" id="todoInput" goal="user_name" />
+    </div>
+    <button id="goalButton" onclick="todoList()" type="button">Set Goal</button>
+
+
+    <ol id="todoList"></ol>
+
+    </form>
+
+    <script  type="text/javascript">
+    function todoList() {
+    var item = document.getElementById("todoInput").value;
+    var text = document.createTextNode(item);
+    var newItem = document.createElement("li");
+    newItem.appendChild(text);
+    document.getElementById("todoList").appendChild(newItem);
+    }
+
+    </script>
+
+
 </div>
 {% endblock %}
