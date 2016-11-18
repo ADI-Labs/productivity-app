@@ -8,12 +8,3 @@ def index():
 
 
 
-@app.route('/trophies')
-def trophies():
-    return render_template('trophies.jinja')
-
-
-
-@app.route('/page2')
-def page2():
-
